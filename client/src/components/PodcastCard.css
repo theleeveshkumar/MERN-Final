@@ -1,0 +1,115 @@
+.podcast-card {
+     background-color: white;
+     border-radius: 12px;
+     overflow: hidden;
+     box-shadow: var(--card-shadow);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     height: 100%;
+     display: flex;
+     flex-direction: column;
+   }
+   
+   .podcast-card:hover {
+     transform: translateY(-5px);
+     box-shadow: var(--hover-shadow);
+   }
+   
+   .podcast-image {
+     position: relative;
+     height: 180px;
+   }
+   
+   .podcast-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+   }
+   
+   .play-button {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background-color: rgba(255, 255, 255, 0.8);
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     border: none;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     opacity: 0;
+     transition: opacity 0.3s ease;
+   }
+   
+   .podcast-card:hover .play-button {
+     opacity: 1;
+   }
+   
+   .play-button i {
+     color: var(--primary-color);
+     font-size: 1.2rem;
+   }
+   
+   .podcast-info {
+     padding: 20px;
+     display: flex;
+     flex-direction: column;
+     flex: 1;
+   }
+   
+   .podcast-title {
+     font-size: 1.2rem;
+     margin-bottom: 10px;
+     color: var(--text-color);
+   }
+   
+   .podcast-description {
+     color: var(--light-text);
+     font-size: 0.9rem;
+     margin-bottom: 15px;
+     line-height: 1.5;
+     overflow: hidden;
+     display: -webkit-box;
+     -webkit-line-clamp: 3;
+     -webkit-box-orient: vertical;
+     flex: 1;
+   }
+   
+   .save-button {
+     align-self: flex-start;
+     background-color: transparent;
+     color: var(--primary-color);
+     border: 1px solid var(--primary-color);
+     border-radius: 20px;
+     padding: 8px 16px;
+     cursor: pointer;
+     font-weight: 500;
+     transition: all 0.3s ease;
+     margin-top: auto;
+   }
+   
+   .save-button:hover {
+     background-color: var(--primary-color);
+     color: white;
+   }
+   
+   .save-button.saved {
+     background-color: var(--primary-color);
+     color: white;
+   }
+   
+   @media (max-width: 480px) {
+     .podcast-image {
+       height: 160px;
+     }
+     
+     .podcast-info {
+       padding: 15px;
+     }
+     
+     .podcast-title {
+       font-size: 1.1rem;
+     }
+   }

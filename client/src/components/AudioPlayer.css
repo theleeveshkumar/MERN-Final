@@ -1,0 +1,152 @@
+.audio-player {
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     background-color: white;
+     padding: 15px 30px;
+     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     z-index: 100;
+   }
+   
+   .player-info {
+     display: flex;
+     align-items: center;
+     gap: 15px;
+     flex: 1;
+     max-width: 30%;
+   }
+   
+   #player-image {
+     width: 60px;
+     height: 60px;
+     border-radius: 8px;
+     object-fit: cover;
+   }
+   
+   .player-details {
+     overflow: hidden;
+   }
+   
+   #player-title {
+     font-size: 1rem;
+     margin-bottom: 5px;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+   }
+   
+   #player-description {
+     font-size: 0.8rem;
+     color: var(--light-text);
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+   }
+   
+   .player-controls {
+     display: flex;
+     align-items: center;
+     gap: 15px;
+     flex: 2;
+   }
+   
+   .player-controls button {
+     background: none;
+     border: none;
+     cursor: pointer;
+     color: var(--text-color);
+     font-size: 1.2rem;
+     transition: color 0.3s ease;
+   }
+   
+   .player-controls button:hover {
+     color: var(--primary-color);
+   }
+   
+   #play-pause-btn {
+     background-color: var(--primary-color);
+     color: white;
+     width: 40px;
+     height: 40px;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+   
+   .progress-container {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     flex: 1;
+   }
+   
+   .progress-bar {
+     flex: 1;
+     background-color: #e0e0e0;
+     height: 4px;
+     border-radius: 2px;
+     position: relative;
+     cursor: pointer;
+   }
+   
+   #progress {
+     background-color: var(--primary-color);
+     height: 100%;
+     border-radius: 2px;
+     width: 0;
+   }
+   
+   #current-time, #duration {
+     font-size: 0.8rem;
+     color: var(--light-text);
+     width: 35px;
+     text-align: center;
+   }
+   
+   .volume-container {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+   }
+   
+   .volume-container i {
+     color: var(--light-text);
+   }
+   
+   #volume-slider {
+     width: 80px;
+     accent-color: var(--primary-color);
+   }
+   
+   @media (max-width: 768px) {
+     .audio-player {
+       flex-direction: column;
+       padding: 10px 15px;
+       gap: 15px;
+     }
+     
+     .player-info {
+       max-width: 100%;
+     }
+     
+     .player-controls {
+       width: 100%;
+     }
+   }
+   
+   @media (max-width: 480px) {
+     .player-controls {
+       flex-wrap: wrap;
+     }
+     
+     .progress-container {
+       width: 100%;
+       order: -1;
+       margin-bottom: 10px;
+     }
+   }
